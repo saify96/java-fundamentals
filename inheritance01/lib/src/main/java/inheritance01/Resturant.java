@@ -1,7 +1,8 @@
 package inheritance01;
+
 import java.util.*;
 
-public class Resturant {
+public class Resturant implements addReview {
     private String name;
     private int stars;
     private int price;
@@ -11,11 +12,17 @@ public class Resturant {
         return reviewsList;
     }
 
-    public void addReview(Review review) {
-        if(!reviewsList.contains(review)){
-            reviewsList.add(review);
-            this.stars = ((this.stars*reviewsList.size())+ review.getStars()) / (reviewsList.size()+1);
-        }
+//    public void addReview(Review review) {
+//        if (!reviewsList.contains(review)) {
+//            reviewsList.add(review);
+//            this.stars = ((this.stars * reviewsList.size()) + review.getStars()) / (reviewsList.size() + 1);
+//        }
+//    }
+
+    @Override
+    public void addReviewInter(Review review ) {
+        this.stars = ((this.stars * reviewsList.size()) + review.getStars()) / (reviewsList.size()+1);
+        reviewsList.add(review);
     }
 
     public Resturant(String name, int stars, int price) {
