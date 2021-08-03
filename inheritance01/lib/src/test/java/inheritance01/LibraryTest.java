@@ -50,8 +50,6 @@ public class LibraryTest {
         cryptoShop.addReviewInter(review2);
         cryptoShop.addReviewInter(review3);
         System.out.println(cryptoShop.getStars());
-       // cryptoShop.addReviewInter(review3);
-//        assertE
         assertEquals(7.0,cryptoShop.getStars(),0.0000);
     }
 
