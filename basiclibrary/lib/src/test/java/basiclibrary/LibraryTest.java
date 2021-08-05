@@ -4,11 +4,36 @@
 package basiclibrary;
 
 import org.junit.Test;
+import java.util.Arrays;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
+    @Test
+    public void testContainsDuplicatesMethod() {
         Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+        int[] RandomArray = {1, 2, 3};
+        assertEquals(false, classUnderTest.containsDuplicates(RandomArray));
+    }
+
+    @Test
+    public void testContainsDuplicatesMethod2() {
+        Library classUnderTest = new Library();
+        int[] RandomArray = {1, 2, 1};
+        assertEquals(true, classUnderTest.containsDuplicates(RandomArray));
+    }
+
+    @Test
+    public void testCalculateAvgMethod() {
+        Library classUnderTest = new Library();
+        int[] RandomArray = {3, 1, 5, 6, 5};
+        assertEquals(4.0, classUnderTest.calculateAvg(RandomArray), 0.000);
+    }
+
+    @Test
+    public void testArrayOfArraysMethod() {
+        Library classUnderTest = new Library();
+        int[][] RandomArray = {{2, 4, 6}, {4, 3, 8}, {8, 5, 5}};
+        int[] newArr = {2, 4, 6};
+        assertEquals( "[2, 4, 6]", Arrays.toString(classUnderTest.arrayOfArrays(RandomArray)));
     }
 }
